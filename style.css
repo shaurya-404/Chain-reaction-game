@@ -1,0 +1,100 @@
+body {
+    background-color: black;
+    color: white; 
+}
+
+.infobar {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-around; /* Spaces items evenly */
+    align-items: center;
+    color: #0026ff;
+    border-bottom: 2px solid rgb(31, 81, 255);
+    margin-bottom: 20px;
+}
+
+#PlayerTurn {
+    color: #ffe731;
+}
+
+#gTimer {
+    font-weight: bold;
+    color: #ff0000;
+}
+#tTimer {
+    font-weight: bold;
+    color: #ff0000; 
+}
+
+.gamegrid {
+  place-items: center;
+  height: 100vh;
+}
+
+
+table {
+    border: 2px solid rgb(31 81 255);
+    border-collapse: collapse;
+    
+}
+
+td,th {
+    border: 1px solid rgb(31 81 255);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    
+}
+
+.cell {
+    width: 75px;
+    height: 75px;
+    border: 1px solid rgb(31, 81, 255);
+    cursor: pointer;
+    font: 35px;
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: rgba(0, 55, 255, 0.2);
+}
+
+
+
+.win {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#player {
+    background-color: #222;
+    padding: 20px 40px 10px 40px;
+    border: 3px solid #ea00ff;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    font-size: 40px;
+    font-weight: bold;
+    min-width: 300px;
+    text-align: center;
+}
+
+#points {
+    background-color: #222;
+    padding: 10px 40px 20px 40px;
+    border: 3px solid #ea00ff;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    font-size: 24px;
+    min-width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
