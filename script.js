@@ -1,10 +1,11 @@
-let gameTime = 300; // 5 minutes
-let turnTime = 15;  // 15 seconds
+let gameTime = 300; 
+let turnTime = 15; 
 let CP = 1;
 let p1S = 0;
 let gc= 0;
 let p2S = 0;
 let c = 0;
+let pause=false;
 const p1color = "rgb(255, 231, 49)";
 const p2color = "rgb(17, 255, 0)";
 
@@ -18,7 +19,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoretxt = document.getElementById('score');
     const cells = document.querySelectorAll('.cell');
 
+    const paubtn = document.getElementById('pause');
+
+    paubtn.addEventListener('click', () => {
+        pause = !pause;
+        if(pause){
+            paubtn.innerText = "resume";
+            paubtn.style.backgroundColor="#ff0000";
+            clearInterval(gameInterval);
+            clearInterval(turnInterval);
+        }
+        else{
+            paubtn.innerText = "pause";
+            paubtn.style.backgroundColor = "#00ff2f";
+            sgt();
+            stt();
+        }
+    })
+
+    function sgt() {
+        gameInterval = setInterval(() => {
+            gameTime--;
+            let mins = Math.floor(gameTime / 60);
+            let secs = gameTime % 60;
+            document.getElementById('gtimer').innerText = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+
+        }, 1000);
+    }
+
+    function stt() {
+        clearInterval(turnInterval);
+        
+        turnInterval = setInterval(() => {
+            turnTime--;
+            document.getElementById('ttimer').innerText = turnTime;
+
+            if (turnTime <= 0) {
+                switchplayer();
+            }
+        }, 1000);
+    }
     
+
     //cells.forEach(cell => {
         // cell.addEventListener('click', () => {
         //     // Access the data attributes we set in HTML
@@ -165,6 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cells.forEach(cell => {
         cell.addEventListener('click', () => {
+
+            if (pause) return;
+
             row = cell.dataset.row;
             col = cell.dataset.col;
             let capacity=0;
@@ -228,4 +273,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     resetttimer();
+
 });
