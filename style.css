@@ -6,7 +6,7 @@ body {
 .infobar {
     display: flex;
     font-size: 1.5rem;
-    justify-content: space-around; /* Spaces items evenly */
+    justify-content: space-around;
     align-items: center;
     color: #0026ff;
     border-bottom: 2px solid rgb(31, 81, 255);
@@ -40,24 +40,6 @@ table {
     border: 2px solid rgb(31 81 255);
     border-collapse: collapse;
     
-}
-
-@media screen {
-    td,th {
-    border: 1px solid rgb(31 81 255);
-    width: 45px;
-    height: 45px;
-    text-align: center;
-    }
-
-    .cell {
-        width: 45px;
-        height: 45px;
-        border: 1px solid rgb(31, 81, 255);
-        cursor: pointer;
-        font: 15px;
-        transition: background-color 0.2s;
-    }
 }
 
 td,th {
@@ -126,4 +108,57 @@ td,th {
     height: 20;
     width: 75;
     color: #0026ff;
+}
+
+
+@media (min-width: 1920px) and (orientation: landscape) {
+    .infobar {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+    .cell {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid rgb(31, 81, 255);
+    cursor: pointer;
+    font: 6rem;
+    transition: background-color 0.2s;
+    }
+    td,th {
+    border: 1px solid rgb(31 81 255);
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    }
+    caption {
+    font-size: 2.5rem;
+    padding: 10px;    
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 1440px) and (orientation: portrait) {
+    .infobar {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+    .cell {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid rgb(31, 81, 255);
+    cursor: pointer;
+    font: 6rem;
+    transition: background-color 0.2s;
+    }
+    td,th {
+    border: 1px solid rgb(31 81 255);
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    }
+    caption {
+    font-size: 2.5rem;
+    padding: 10px;    
+    font-weight: bold;
+  }
 }
